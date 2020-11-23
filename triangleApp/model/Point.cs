@@ -17,12 +17,11 @@ namespace triangleApp.model
 
         }
 
-        public void Coordinate (Point point)
+        public void Coordinate ()
         {
-            double coordinateX = point.CoordinateX;
-            double coordinateY = point.CoordinateY;
-
-            Console.WriteLine($"Координаты точки {nameof(point)} : x = {coordinateX} y = {coordinateY}");
+            Console.WriteLine($"Координаты точки : x = {CoordinateX} y = {CoordinateY}");
         }
+
+        //public void Controller ()
     }
 }

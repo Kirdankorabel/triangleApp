@@ -16,23 +16,11 @@ namespace TriangleApp.model
             Point2 = point2;
         }
 
-        public double LeghtValue(Side side)
+        public double CalcLeght()
         {
-
-            Point1 = side.Point1;
-            Point2 = side.Point2;
-
-            int px1 = Point1.CoordinateX;
-            int py1 = Point1.CoordinateY;
-            int px2 = Point2.CoordinateX;
-            int py2 = Point2.CoordinateY;
-
-            double leght = Math.Sqrt((px1 - px2) * (px1 - px2) + (py1 - py2) * (py1 - py2));
-
-            Leght = leght;
+            double Leght = Math.Sqrt((Point1.CoordinateX - Point2.CoordinateX) * (Point1.CoordinateX - Point2.CoordinateX) 
+                                   + (Point1.CoordinateY - Point2.CoordinateY) * (Point1.CoordinateY - Point2.CoordinateY));
             return Leght;
         }
-
-    }
-        
+    }        
 }
