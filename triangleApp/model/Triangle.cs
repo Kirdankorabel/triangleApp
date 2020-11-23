@@ -122,7 +122,7 @@ namespace TriangleApp.model
 
         public static bool operator ==(Triangle triangle, Triangle tria0)
         {
-            if ( triangle.Equally(tria0))
+            if ( triangle.Equals(tria0))
             {
                 return true;
             }
@@ -134,7 +134,7 @@ namespace TriangleApp.model
 
         public static bool operator !=(Triangle triangle, Triangle tria0)
         {
-            if (triangle.Equally(tria0))
+            if (triangle.Equals(tria0))
             {
                 return false;
             }
@@ -144,11 +144,14 @@ namespace TriangleApp.model
             }
         }
 
-        public bool Equally(Triangle tria0)
+        public override bool Equals(Object obj)
         {
-            if (Side1 == tria0.Side1 && Side2 == tria0.Side2 && Side3 == tria0.Side3 ||
-                Side1 == tria0.Side2 && Side2 == tria0.Side3 && Side3 == tria0.Side1 ||
-                Side1 == tria0.Side3 && Side2 == tria0.Side1 && Side3 == tria0.Side2)
+            if (obj.GetType() != this.GetType()) return false;
+
+            Triangle tria = (Triangle)obj;
+            if (Side1 == tria.Side1 && Side2 == tria.Side2 && Side3 == tria.Side3 ||
+                Side1 == tria.Side2 && Side2 == tria.Side3 && Side3 == tria.Side1 ||
+                Side1 == tria.Side3 && Side2 == tria.Side1 && Side3 == tria.Side2)
             {
                 return true;
             }
@@ -157,6 +160,5 @@ namespace TriangleApp.model
                 return false;
             }
         }
-
     }
 }
